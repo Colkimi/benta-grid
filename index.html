@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="  https://developers.google.com/web/fundamentals/design-and-ux/typography/variable-fonts" rel="stylesheet">
+  <link href="https://variablefonts.typenetwork.com" rel="stylesheet">
+  <link href="https://medium.com/variable-fonts" rel="stylesheet">
+  <title>Frontend Mentor | Bento grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+        font-size: 16px; /* Base font size for rem calculations */
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .container {
+        max-width: 80%;
+        max-height: 90%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 15.625rem 12.5rem 15.625rem; 
+        gap: 1.5rem;
+        max-height: 100vh;
+        padding: 1.125rem;
+        padding-left: 10%;
+    }
+
+    .box {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.625rem; 
+        margin: 1.25rem;
+        background-color: hsl(0, 0%, 100%);
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+    }
+
+    .content {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.625rem; 
+        margin: 1.25rem; 
+        background-color: whitesmoke;
+        height: 12.5rem; 
+    }
+
+    .second {
+        background-color: hsl(256, 67%, 59%);
+        grid-column: span 2;
+        grid-row: span 1;
+        max-height: 18.75rem; 
+        color: hsl(0, 0%, 100%);
+        text-align: center;
+        align-items: center;
+        font-size: 1.875rem; 
+    }
+
+    .third {
+        justify-content: right;
+        grid-row: span 2;
+        background-color: hsl(254, 88%, 90%);
+        align-items: right;
+        text-align: center;
+    }
+
+    .addon {
+        background-color: hsl(39, 100%, 71%);
+        text-align: center;
+    }
+
+    .fourth {
+        grid-row: span 2;
+    }
+
+    .yellow {
+        background-color: hsl(31, 66%, 93%);
+    }
+
+    .fonting {
+        color: hsl(0, 0%, 100%);
+        right: 0.625rem; 
+        font-size: 1.125rem; 
+        position: relative;
+        bottom: 3.75rem; 
+    }
+
+    .post {
+        color: hsl(0, 0%, 7%);
+        right: -6.25rem; 
+    }
+
+    .rate_content {
+        color: hsl(0, 0%, 100%);
+        font-size: 1.875rem; 
+        text-align: center;
+        position: relative;
+        right: 7.5rem;
+    }
+
+    .one {
+        grid-row: span 1;
+        position: relative;
+        height: 125rem; 
+        text-align: center;
+        align-items: center;
+    }
+
+    .rate_2 {
+        display: flex;
+        max-height: 80%;
+    }
+
+    .rate_2 img {
+        max-width: 150%;
+        max-height: 80%;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        position: relative;
+        top: 0.625rem; 
+        left: -3.125rem; 
+    }
+
+    .one img {
+        max-width: 70%;
+        max-height: 70%;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .calender {
+        display: flex;
+        max-height: 70%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .calender img {
+        max-width: 60%;
+        max-height: 60%;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .rating-icon img {
+        max-width: 80%;
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        right: -1.875rem; 
+    }
+
+    .chat-icon img {
+        max-width: 80%;
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        right: -1.875rem; 
+    }
+
+    .star-icon img {
+        max-width: 40%;
+        max-height: 40%;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        position: relative;
+        bottom: 2.5rem; 
+    }
+
+    h2 {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span {
+        font-weight: 700;
+        font-size: 1.5625rem;
+        color: hsl(256, 67%, 59%);
+    }
+
+        @media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .box {
+    margin: 1rem 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .fonting, .post, .rate_content {
+    position: static;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .rate_2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rate_2 img {
+    max-width: 100%;
+    left: 0;
+  }
+
+  .calender img,
+  .chat-icon img,
+  .rating-icon img,
+  .star-icon img,
+  .one img {
+    max-width: 100%;
+    max-height: auto;
+    position: static;
+    margin: 1rem auto;
+  }
+
+  .container > div {
+    padding: 1rem;
+  }
+
+  .second, .third, .fourth {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <section class="container">
+    <div class="box yellow one">
+      <h2>
+       Create and<br> schedule<br> content <br><span>quicker</span>
+      </h2>
+
+     <img src="./assets/images/illustration-create-post.webp" alt="button-image">
+    </div>
+    <div class="box second">
+      <h1 >
+        Social Media <span style="color: hsl(39, 100%, 71%);font-size: 40px;padding: 0px;margin:0px;"">10x </span><br>Faster with AI
+      </h1>
+       <div class="star-icon">
+        <img src="./assets/images/illustration-five-stars.webp" alt="five-star-rating">
+       </div>
+       <p class="fonting">
+        Over 4,000 5-star reviews
+       </p>    
+      </div>
+
+      <div class ="box third">
+        <h2>
+         Schedule to <br>social media.
+        </h2>
+        <div class="rating-icon">
+          <img src="./assets/images/illustration-schedule-posts.webp" alt="annual-rating-icon">
+        </div>
+        <p class="post">
+         Optimize post timings<br> to publish content at<br> the perfect time for<br> your audience.
+        </p>  
+       </div>
+
+       <div class="box fourth addon">
+        <h2>
+          Write your<br> content<br> using AI.
+        </h2>
+        <div class="chat-icon">
+          <img src="./assets/images/illustration-ai-content.webp" alt=""chat-image>
+        </div>
+      </div>
+
+    <div class=" box content">
+      <div class="media_icon">
+       <img src="./assets/images/illustration-multiple-platforms.webp" alt="social-media-icon">
+      </div>
+      <h2>
+        Manage multiple accounts and platforms.
+      </h2>
+    </div>
+
+    <div class="box content addon">
+      <h2>
+        Maintain a consistent <br>posting<br> schedule.
+      </h2>
+      
+      <div class="calender">
+        <img src="./assets/images/illustration-consistent-schedule.webp" alt="calender-icon">
+      </div>
+    </div>
+    <div class=" box content">
+      <h2 style="font-size: 30px; padding-left: 15%; padding-top: 0%;">
+        >56%
+      </h2>
+       <p style="padding-left: 5%;">
+        faster audience growth
+       </p>
+       <div class="pictures">
+        <img src="./assets/images/illustration-audience-growth.webp" alt="avatar-icons">
+       </div>
+    </div>
+    <div class =" box second rate_2">
+        <img src="./assets/images/illustration-grow-followers.webp">
+        <div class="rate_content">
+        Grow followers <br>with non-stop<br> content.
+        </div>
+    </div>
+
+
+
+  </section>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">Colkimi</a>.
+    </div>
+
+  </footer>
+  
+</body>
+</html>
